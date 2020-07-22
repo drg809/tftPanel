@@ -5,7 +5,7 @@ import {Summoner} from '../models/summoner';
 
 
 @Injectable({providedIn: 'root'})
-export class UserService {
+export class SummonerService {
   private apiUrl: string = environment.API_URL;
 
   constructor(private http: HttpClient) {
