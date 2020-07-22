@@ -16,7 +16,9 @@ export class Profile1Component implements OnInit {
 
   newSummoner() {
     console.log(1);
-    const summoner: Summoner = {userId: '5f15a1daf7bfa346b272c89e', summonerName: this.summoner};
+    const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    console.log(user);
+    const summoner: Summoner = {userId: user._id, summonerName: this.summoner};
     console.log(summoner);
     this.summoner !== undefined ? this.summonerService.create(summoner).subscribe((emitData: any) => { console.log(emitData); }) : console.log('Introduce tu nombre de invocador');
 
