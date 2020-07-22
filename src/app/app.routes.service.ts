@@ -12,7 +12,6 @@ import { LoginComponent } from './main-layout/login/login.component';
 
 
 const routes: Route[] = [
-  { path: 'login', component: LoginComponent},
   { path: '', pathMatch: 'full', redirectTo: 'dashboards/v1' },
   { path: 'dashboards', children:
     [
@@ -35,6 +34,7 @@ const routes: Route[] = [
     ]
   },
   { path: 'modals', component: ModalsComponent, canActivate: [AuthGuard]},
+  { path: 'login', component: LoginComponent},
   { path: '**', component: NotFoundComponent, canActivate: [AuthGuard] },
 
 ];

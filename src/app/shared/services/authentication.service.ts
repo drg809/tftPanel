@@ -18,7 +18,6 @@ export class AuthenticationService {
   public clearAuthData() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(new User());
     this.currentUser = new User();
   }
 
@@ -27,7 +26,7 @@ export class AuthenticationService {
   }
 
   login(email: string, password: string) {
-    return this.http.post<any>(this.apiUrl + '/login', {email, password})
+    return this.http.post<any>(this.apiUrl + '/users/login', {email, password})
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
@@ -40,13 +39,7 @@ export class AuthenticationService {
   }
 
   logout() {
-    return this.http.get<any>(this.apiUrl + '/logout')
-      .pipe(map(result => {
-        // login successful if there's a jwt token in the response
-        if (result) {
-          this.clearAuthData();
-        }
-        return true;
-      }));
+    this.clearAuthData();
+    location.reload();
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { AuthGuard } from 'src/app/shared/helpers/auth.guard';
+import { AuthenticationService } from 'src/app/shared/services/authentication.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class NavigationComponent implements OnInit {
   logged: boolean;
   clicked: boolean;
 
-  constructor(private authGuard: AuthGuard) {
+  constructor(private authGuard: AuthGuard,private authService: AuthenticationService) {
     this.clicked = this.clicked === undefined ? false : true;
   }
 
@@ -24,4 +25,7 @@ export class NavigationComponent implements OnInit {
     this.clicked = val;
   }
 
+  logout() {
+    this.authService.logout();
+  }
 }
