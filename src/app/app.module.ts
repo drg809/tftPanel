@@ -13,10 +13,13 @@ import { ErrorModule } from './views/errors/error.module';
 
 // main layout
 import { NavigationModule } from './main-layout/navigation/navigation.module';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './main-layout/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     AgmCoreModule.forRoot({
@@ -31,8 +34,9 @@ import { NavigationModule } from './main-layout/navigation/navigation.module';
     SharedModule,
     ViewsModule,
     ErrorModule,
-    FormsModule, 
-    ReactiveFormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
