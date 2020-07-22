@@ -4,7 +4,7 @@ import {environment} from '../../../environments/environment';
 import {Summoner} from '../models/summoner';
 
 
-@Injectable({providedIn: 'root'})
+@Injectable({ providedIn: 'root' })
 export class SummonerService {
   private apiUrl: string = environment.API_URL;
 
@@ -20,6 +20,7 @@ export class SummonerService {
   }
 
   create(data: Summoner) {
+    console.log('service');
     return this.http.post<Summoner>(this.apiUrl + '/summoners/', data);
   }
 
