@@ -1,11 +1,11 @@
 export class Summoner {
-  public id!: number;
+  public id?: number;
   public userId!: string | null;
   public summonerName!: string | null;
-  public puuid!: string | null;
-  public region!:  string | null;
-  public summonerLevel!: number | null;
-  public accountId!: string | null;
-  public profileIconId!: number | null;
-  public deletedAt!: Date | null;
+  public puuid?: string | null;
+  public region?:  string | null;
+  public summonerLevel?: number | null;
+  public accountId?: string | null;
+  public profileIconId?: number | null;
+  public deletedAt?: Date | null;
 }
