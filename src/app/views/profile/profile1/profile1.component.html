@@ -110,18 +110,20 @@
                         <!--Card content-->
                         <mdb-card-body>
                             <!--Title-->
-                            <h4 class="card-title font-bold mb-3"><strong>Project name</strong></h4>
+                            <h4 class="card-title font-bold mb-3"><strong>Nuevo summonar</strong></h4>
                             <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.
+                            <p class="card-text">Introduce tu nombre de invocador para realizar seguimiento.
                             </p>
                         </mdb-card-body>
 
                         <!--Card footer-->
                         <div class="card-footer links-light">
                             <span class="right">
-                                <a href="" class="waves-effect p-2">Live Preview
-                                    <mdb-icon fas icon="camera" class="ml-1"></mdb-icon></a>
+                                    <button type="button" mdbBtn color="primary" class="waves-light" data-toggle="modal"
+                                            data-target="#basicExample" (click)="centralRegular.show()"
+                                            mdbWavesEffect>
+                                            Nuevo <mdb-icon fas icon="plus" class="ml-1"></mdb-icon>
+                                    </button>
                             </span>
                         </div>
 
@@ -186,4 +188,33 @@
     </div>
 
 
+</div>
+
+<div mdbModal #centralRegular="mdb-modal" class="modal fade" id="basicExample"
+      tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+      aria-hidden="true" [config]="{backdrop: true, ignoreBackdropClick: false}">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title w-100" id="myModalLabel">Nuevo invocador</h4>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close" (click)="centralRegular.hide()">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Introduce tu nombre de invocador
+                <input mdbInputDirective type="text" id="summoner" class="form-control" [(ngModel)]="summoner">
+            </div>
+            <div class="modal-footer">
+                <button type="button" mdbBtn color="secondary" size="sm"
+                        class="waves-light" data-dismiss="modal"
+                        (click)="centralRegular.hide()" mdbWavesEffect>Close
+                </button>
+                <button type="button" mdbBtn (click)="newSummoner()" color="primary" size="sm"
+                        class="waves-light" mdbWavesEffect>Trazar
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
