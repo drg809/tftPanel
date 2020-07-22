@@ -1,0 +1,46 @@
+<div class="container" id="modalLogin">
+  <div class="modal-dialog cascading-modal" role="document">
+    <!--Content-->
+    <div class="modal-content">
+
+      <!--Header-->
+      <div class="modal-header light-blue darken-3 white-text">
+        <h4 class="title">
+          <mdb-icon fas icon="user"></mdb-icon> Log in</h4>
+      </div>
+      <!--Body-->
+      <div class="modal-body">
+        <div class="md-form form-sm">
+          <mdb-icon far icon="envelope"></mdb-icon>
+          <input type="text" id="form30" class="form-control" [(ngModel)]="mail">
+          <label for="form30">Your email</label>
+        </div>
+
+        <div class="md-form form-sm">
+          <mdb-icon fas icon="lock"></mdb-icon>
+          <input type="password" id="form31" class="form-control" [(ngModel)]="password">
+          <label for="form31">Your password</label>
+        </div>
+
+        <div class="text-center mt-2">
+          <button (click)="login()" class="btn btn-info waves-light" mdbWavesEffect>Log in
+            <mdb-icon fas icon="sign-in-alt" class="ml-1"></mdb-icon>
+          </button>
+        </div>
+
+      </div>
+      <!--Footer-->
+      <div class="modal-footer">
+        <div class="options text-center text-md-right mt-1">
+          <p>Not a member?
+            <a href="#">Sign Up</a>
+          </p>
+          <p>Forgot
+            <a href="#">Password?</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
