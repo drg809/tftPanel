@@ -8,19 +8,24 @@ import { Summoner } from 'src/app/shared/models/summoner';
   styleUrls: ['./profile1.component.scss']
 })
 export class Profile1Component implements OnInit {
-  summoner: string;
+  summoners: any;
+  newSummoner: Summoner;
+  summonerName: string;
+  user: any;
   constructor(private summonerService: SummonerService) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    this.summonerService.getByUserId(this.user._id).subscribe(data => {
+      this.summoners = data;
+    });
   }
 
-  newSummoner() {
-    console.log(1);
-    const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
-    console.log(user);
-    const summoner: Summoner = {userId: user._id, summonerName: this.summoner};
-    console.log(summoner);
-    this.summoner !== undefined ? this.summonerService.create(summoner).subscribe((emitData: any) => { console.log(emitData); }) : console.log('Introduce tu nombre de invocador');
+  addNewSummoner() {
+    this.summonerName !== undefined ? this.summonerService.create({userId: this.user._id, summonerName: this.summonerName}).subscribe((emitData: any) => { console.log(emitData); }) : console.log('Introduce tu nombre de invocador');
+  }
 
+  deleteSummoner(id: string) {
+    this.summonerService.remove(id);
   }
 }

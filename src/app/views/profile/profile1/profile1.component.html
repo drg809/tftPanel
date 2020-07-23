@@ -18,19 +18,16 @@
             <!--Card content-->
             <mdb-card-body class="text-center">
                 <!--Title-->
-                <h4 class="card-title font-bold mb-2"><strong>Alice Mayer</strong></h4>
-                <h5 class="indigo-text"><strong>Photographer</strong></h5>
+                <h4 class="card-title font-bold mb-2"><strong>{{ user.name }}</strong></h4>
+                <h5 class="indigo-text"><strong>EL fuking master</strong></h5>
 
-                <h6 class='text-justify'><strong>About:</strong></h6>
-                <p class='text-justify'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis
-                    quod animi dignissimos consectetur
-                    quibusdam numquam laboriosam, minus, provident...</p>
+                <p class='text-justify'>Aqui podras añadir tus diferentes cuentas de league of legends por su nombre de invocador, no debes añadir cuentas de otros o sufriras un golpe de remo.</p>
 
-                <div class="text-right">
+                <!-- <div class="text-right">
                     <button type="button" mdbBtn outline="true" color="primary" rounded="true" size="sm" mdbWavesEffect>
                         More...
                     </button>
-                </div>
+                </div> -->
 
             </mdb-card-body>
             <!--/.Card content-->
@@ -50,39 +47,39 @@
             <!--Section description-->
 
             <!--Grid row-->
-            <div class="row d-flex justify-content-center">
+            <div class="row d-flex justify-content-left summoners">
 
                 <!--Grid column-->
-                <div class="col-lg-6 col-xl-5 mb-3">
+                <div *ngFor="let item of summoners;" class="col-lg-4 col-xl-3 mb-3">
 
                     <!--Card-->
-                    <mdb-card cascade="true" narrower="true" class="d-flex mb-5">
+                    <mdb-card cascade="true" narrower="true" class="d-flex mb-5 summonerscard">
 
                         <!--Card image-->
-                        <div class="view overlay hm-white-slight">
-                            <img src="https://mdbootstrap.com/img/Mockups/Horizontal/6-col/pro-profile-page.jpg"
-                                 class="img-fluid" alt="">
-                            <a href="#">
-                                <div class="mask"></div>
-                            </a>
+                        <div class="view overlay hm-white-slight iconImage">
+                            <img src="https://ddragon.leagueoflegends.com/cdn/10.14.1/img/profileicon/{{item.profileIconId}}.png"
+                                 class="img-fluid" alt="Icono no encontrado">
                         </div>
 
                         <!--Card content-->
                         <mdb-card-body>
                             <!--Title-->
-                            <h4 class="card-title font-bold mb-3"><strong>Project name</strong></h4>
+                            <h4 class="card-title font-bold mb-3"><strong>{{ item.summonerName }}</strong></h4>
                             <!--Text-->
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.
+                            <p class="card-text">
+                              Region: {{ item.region }}
+                            </p>
+                            <p class="card-text">
+                              En seguimiento.
                             </p>
                         </mdb-card-body>
 
                         <!--Card footer-->
                         <div class="card-footer links-light">
                             <span class="right">
-                                <a href=""
-                                   class="waves-effect p-2">Live Preview
-                                    <mdb-icon fas icon="camera" class="ml-1"></mdb-icon></a>
+                                <button (click)="deleteSummoner(item.id)"
+                                   class="waves-effect p-2">Eliminar
+                                    <mdb-icon fas icon="trash" class="ml-1"></mdb-icon></button>
                             </span>
                         </div>
 
@@ -93,13 +90,13 @@
                 <!--Grid column-->
 
                 <!--Grid column-->
-                <div class="col-lg-6 col-xl-5 mb-3">
+                <div class="col-lg-4 col-xl-3 mb-3">
 
                     <!--Card-->
-                    <mdb-card cascade="true" narrower="true" class="d-flex mb-5">
+                    <mdb-card cascade="true" narrower="true" class="d-flex mb-5 summonerscard">
 
                         <!--Card image-->
-                        <div class="view overlay hm-white-slight">
+                        <div class="view overlay hm-white-slight iconImageN">
                             <img src="https://mdbootstrap.com/img/Mockups/Horizontal/6-col/pro-signup.jpg"
                                  class="img-fluid" alt="">
                             <a href="#">
@@ -110,9 +107,9 @@
                         <!--Card content-->
                         <mdb-card-body>
                             <!--Title-->
-                            <h4 class="card-title font-bold mb-3"><strong>Nuevo summonar</strong></h4>
+                            <h4 class="card-title font-bold mb-3"><strong>Nuevo summoner</strong></h4>
                             <!--Text-->
-                            <p class="card-text">Introduce tu nombre de invocador para realizar seguimiento.
+                            <p class="card-text">Introduce tu nombre de invocador para realizar seguimiento. Segun las normas de riot no debes añadir cuentas de otros o sufriras un golpe de remo.
                             </p>
                         </mdb-card-body>
 
@@ -136,53 +133,6 @@
             </div>
             <!--Grid row-->
 
-            <!-- Grid row-->
-            <div class="row d-flex justify-content-center">
-                <!--Grid column-->
-                <div class="col-lg-12">
-                    <div class="text-center">
-
-                        <!--Pagination -->
-                        <nav class="my-4">
-                            <ul class="pagination pagination-circle pg-blue mb-0">
-
-                                <!--First-->
-                                <li class="page-item disabled"><a class="page-link" mdbWavesEffect>First</a></li>
-
-                                <!--Arrow left-->
-                                <li class="page-item disabled">
-                                    <a class="page-link" mdbWavesEffect aria-label="Previous">
-                                        <span aria-hidden="true">«</span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                </li>
-
-                                <!--Numbers-->
-                                <li class="page-item active"><a class="page-link" mdbWavesEffect>1</a></li>
-                                <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
-                                <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
-                                <li class="page-item"><a class="page-link" mdbWavesEffect>4</a></li>
-                                <li class="page-item"><a class="page-link" mdbWavesEffect>5</a></li>
-
-                                <!--Arrow right-->
-                                <li class="page-item">
-                                    <a class="page-link" mdbWavesEffect aria-label="Next">
-                                        <span aria-hidden="true">»</span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
-                                </li>
-
-                                <!--First-->
-                                <li class="page-item"><a class="page-link">Last</a></li>
-
-                            </ul>
-                        </nav>
-                        <!--/Pagination -->
-                    </div>
-                </div>
-            </div>
-            <!--Grid row -->
-
         </section>
         <!--/Projects section v.2-->
     </div>
@@ -204,14 +154,14 @@
             </div>
             <div class="modal-body">
                 Introduce tu nombre de invocador
-                <input  type="text" id="summoner" class="form-control" [(ngModel)]="summoner">
+                <input  type="text" id="summoner" class="form-control" [(ngModel)]="summonerName">
             </div>
             <div class="modal-footer">
                 <button type="button" mdbBtn color="secondary" size="sm"
                         class="waves-light" data-dismiss="modal"
                         (click)="centralRegular.hide()" mdbWavesEffect>Close
                 </button>
-                <button type="button" mdbBtn (click)="newSummoner()" color="primary" size="sm"
+                <button type="button" mdbBtn (click)="addNewSummoner()" color="primary" size="sm"
                         class="waves-light" mdbWavesEffect>Trazar
                 </button>
             </div>

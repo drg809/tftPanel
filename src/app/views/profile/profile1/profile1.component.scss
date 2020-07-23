@@ -4,7 +4,7 @@
 }
 
 .card.card-cascade h3,
-.card.card-cascade h4,
+.card.card-cascade h4
 {
     margin-bottom: 0px;
 }
@@ -22,4 +22,17 @@
     .view {
         box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15), 0 3px 12px 0 rgba(0, 0, 0, 0.15);
     }
+}
+
+.summoners{
+  .summonerscard{
+    max-height: 50vh;
+    min-height: 50vh;
+  }
+  .iconImage{
+    min-height: 26.5vh;
+  }
+  .iconImageN img{
+    min-height: 20.5vh;
+  }
 }
