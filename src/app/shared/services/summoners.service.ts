@@ -19,6 +19,10 @@ export class SummonerService {
     return this.http.get<Summoner>(this.apiUrl + '/summoners/' + id);
   }
 
+  getByUserId(id: string) {
+    return this.http.get<Summoner>(this.apiUrl + '/summoners/users/' + id);
+  }
+
   create(data: Summoner) {
     console.log('service');
     return this.http.post<Summoner>(this.apiUrl + '/summoners/', data);
