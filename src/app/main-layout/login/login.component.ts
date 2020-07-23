@@ -18,12 +18,12 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     // tslint:disable-next-line: no-unused-expression
-    this.authGuard.canActivate() ? this.router.navigate(['']) : null ;
+    this.authGuard.canActivate() ? this.router.navigate(['/']) : null ;
   }
 
   login() {
     this.authService.login(this.mail, this.password).subscribe(_data1 => {
-      this.router.navigate(['']);
+      this.router.navigate(['/']);
       location.reload();
     },
     error => {
