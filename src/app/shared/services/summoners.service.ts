@@ -32,6 +32,10 @@ export class SummonerService {
     return this.http.post<Summoner>(this.apiUrl + '/summoners/get_matches', data);
   }
 
+  setLastMatchInfo(data: any) {
+    return this.http.post<Summoner>(this.apiUrl + '/summoners/match_info', data);
+  }
+
   update(data: Summoner) {
     return this.http.put<Summoner>(this.apiUrl + '/summoners/', data);
   }
