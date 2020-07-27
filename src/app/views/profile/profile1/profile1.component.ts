@@ -29,7 +29,7 @@ export class Profile1Component implements OnInit {
     this.summonerService.getMatches(userId).subscribe((emitData: any) => { console.log(emitData); });
   }
 
-  getLastMatch(userId: any) {
+  setLastMatch(userId: any) {
     this.summonerService.setLastMatchInfo(userId).subscribe((emitData: any) => { console.log(emitData); });
   }
 
