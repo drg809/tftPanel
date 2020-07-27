@@ -25,7 +25,15 @@ export class Profile1Component implements OnInit {
     this.summonerName !== undefined ? this.summonerService.create({userId: this.user._id, summonerName: this.summonerName}).subscribe((emitData: any) => { console.log(emitData); }) : console.log('Introduce tu nombre de invocador');
   }
 
+  getMatches(userId: any) {
+    this.summonerService.getMatches(userId).subscribe((emitData: any) => { console.log(emitData); });
+  }
+
+  getLastMatch(userId: any) {
+    this.summonerService.setLastMatchInfo(userId).subscribe((emitData: any) => { console.log(emitData); });
+  }
+
   deleteSummoner(id: string) {
-    this.summonerService.remove(id);
+    this.summonerService.remove(id).subscribe((emitData: any) => { console.log(emitData); });
   }
 }
