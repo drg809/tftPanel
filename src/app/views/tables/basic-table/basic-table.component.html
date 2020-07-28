@@ -10,28 +10,74 @@
             <!--Card content-->
             <mdb-card-body>
                 <!-- <h3 class="mt-5 text-left"><strong>Striped rows:</strong></h3> -->
-                <table class="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>PUUID</th>
-                        <th>Oro sobrante</th>
-                        <th>Ronda</th>
-                        <th>Posicion</th>
-                        <th>Nivel</th>
-                        <th>Jugadores eliminados</th>
-                        <th>Unidades</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                    </tr>
-                    </tbody>
-                </table>
-
+                <div class="matches" *ngFor="let item of match.data.info.participants">
+                  <div  *ngIf="item.puuid == user.puuid" class="match p{{item.placement}}">
+                    <div class="info">
+                      <div>{{item.placement}}º Posicion</div>
+                      <div>
+                        Lvl.{{item.level}}
+                        <img class="gold" src="../../../../assets/icons/icon-gold.svg" alt="icono oro">
+                        {{item.gold_left}}
+                      </div>
+                      <div>
+                        <div [ngSwitch]="match.data.info.game_variation">
+                          <span *ngSwitchCase="'TFT3_GameVariation_Bonanza'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_Bonanza.png" alt="icono galaxia">
+                            Trade Sector
+                          </span>
+                          <span *ngSwitchCase="'TFT3_GameVariation_FreeNeekos'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_FreeNeekos.png" alt="icono galaxia">
+                            The Neekoverse
+                          </span>
+                          <span *ngSwitchCase="'TFT3_GameVariation_FreeRerolls'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_FreeRerolls.png" alt="icono galaxia">
+                            Trade Sector
+                          </span>
+                          <span *ngSwitchCase="'TFT3_GameVariation_MidGameFoN'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_MidGameFoN.png" alt="icono galaxia">
+                            Superdense Galaxy
+                          </span>
+                          <span *ngSwitchCase="'TFT3_GameVariation_SmallerBoards'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_SmallerBoards.png" alt="icono galaxia">
+                            Dwarf Planet
+                          </span>
+                          <span *ngSwitchCase="'TFT3_GameVariation_StartingItems'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_StartingItems.png" alt="icono galaxia">
+                            Galactic Armory
+                          </span>
+                          <span *ngSwitchCase="'TFT3_GameVariation_TwoItemMax'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_TwoItemMax.png" alt="icono galaxia">
+                            Binary Star
+                          </span>
+                          <span *ngSwitchCase="'TFT3_GameVariation_TwoStarCarousels'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_TwoStarCarousels.png" alt="icono galaxia">
+                            Star Cluster
+                          </span>
+                          <span *ngSwitchCase="'TFT3_GameVariation_SmallerBoards'">
+                            <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_SmallerBoards.png" alt="icono galaxia">
+                            Dwarf Planet
+                          </span>
+                          <span *ngSwitchDefault>
+                            Normal Game
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="build">
+                      <div class="champions">
+                        <a *ngFor="let unit of item.units" class="tier{{unit.tier}}">
+                          <img src="../../../../assets/img/champions/{{unit.character_id}}.png">
+                          <div class="items">
+                            <img *ngIf="unit.items[0]" class="item" alt="primer item" src="../../../../assets/img/items/set3/{{unit.items[0]}}.png">
+                            <img *ngIf="unit.items[1]" class="item" alt="segundo item" src="../../../../assets/img/items/set3/{{unit.items[1]}}.png">
+                            <img *ngIf="unit.items[2]" class="item" alt="tercer item" src="../../../../assets/img/items/set3/{{unit.items[2]}}.png">
+                          </div>
+                        </a>
+                      </div>
+                      <div class="traits"></div>
+                    </div>
+                  </div>
+                </div>
             </mdb-card-body>
             <!--/.Card content-->
         </mdb-card>
