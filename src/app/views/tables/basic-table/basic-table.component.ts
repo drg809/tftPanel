@@ -17,7 +17,7 @@ export class BasicTableComponent implements OnInit {
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('currentUser') || '{}');
     console.log(this.user._id);
-    this.summonerService.getHistory(this.user._id).subscribe(data => {
+    this.summonerService.getMatchInfo(this.user._id).subscribe(data => {
       this.match = data;
       console.log(this.match);
     });

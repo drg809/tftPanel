@@ -45,7 +45,7 @@ export class SummonerService {
     return this.http.post<Summoner>(this.apiUrl + '/summoners/match_info_ext', data);
   }
 
-  getHistory(id: string) {
+  getMatchInfo(id: string) {
     return this.http.get<SumMatch>(this.apiUrl + '/summoners/match/' + id);
   }
 }
