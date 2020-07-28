@@ -64,14 +64,14 @@ img.item {
     border: 1px solid #17313a;
     border-left-width: 4px;
 }
-.match .p2{
-  border-left: 4px solid #7c8f92;
+.match.p2{
+  border-left: 4px solid #7c8f92 !important;
 }
-.match .p3{
-  border-left: 4px solid #a0715e;
+.match.p3{
+  border-left: 4px solid #a0715e !important;
 }
-.match .p1{
-  border-left: 4px solid #bd9a38;
+.match.p1{
+  border-left: 4px solid #bd9a38 !important;
 }
 .info{
   display: flex;

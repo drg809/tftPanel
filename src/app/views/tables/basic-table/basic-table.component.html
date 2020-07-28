@@ -38,10 +38,6 @@
                               <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_MidGameFoN.png" alt="icono galaxia">
                               Superdense Galaxy
                             </span>
-                            <span *ngSwitchCase="'TFT3_GameVariation_SmallerBoards'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_SmallerBoards.png" alt="icono galaxia">
-                              Dwarf Planet
-                            </span>
                             <span *ngSwitchCase="'TFT3_GameVariation_StartingItems'">
                               <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_StartingItems.png" alt="icono galaxia">
                               Galactic Armory
@@ -69,9 +65,9 @@
                           <a *ngFor="let unit of item.units" class="tier{{unit.tier}}">
                             <img src="../../../../assets/img/champions/{{unit.character_id}}.png">
                             <div class="items">
-                              <img *ngIf="unit.items[0]" class="item" alt="primer item" src="../../../../assets/img/items/set3/{{unit.items[0]}}.png">
-                              <img *ngIf="unit.items[1]" class="item" alt="segundo item" src="../../../../assets/img/items/set3/{{unit.items[1]}}.png">
-                              <img *ngIf="unit.items[2]" class="item" alt="tercer item" src="../../../../assets/img/items/set3/{{unit.items[2]}}.png">
+                              <img *ngIf="unit.items[0] && unit.items[0] != 999" class="item" alt="primer item" src="../../../../assets/img/items/set3/{{unit.items[0]}}.png">
+                              <img *ngIf="unit.items[1] && unit.items[1] != 999" class="item" alt="segundo item" src="../../../../assets/img/items/set3/{{unit.items[1]}}.png">
+                              <img *ngIf="unit.items[2] && unit.items[2] != 999" class="item" alt="tercer item" src="../../../../assets/img/items/set3/{{unit.items[2]}}.png">
                             </div>
                           </a>
                         </div>
