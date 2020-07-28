@@ -29,11 +29,11 @@ export class SummonerService {
   }
 
   getMatches(data: any) {
-    return this.http.post<Summoner>(this.apiUrl + '/summoners/get_matches', data);
+    return this.http.post<Summoner>(this.apiUrl + '/summoners/get_matches_ext', data);
   }
 
   setLastMatchInfo(data: any) {
-    return this.http.post<Summoner>(this.apiUrl + '/summoners/match_info', data);
+    return this.http.post<Summoner>(this.apiUrl + '/summoners/match_info_ext', data);
   }
 
   update(data: Summoner) {
