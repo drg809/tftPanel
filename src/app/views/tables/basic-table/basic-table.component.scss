@@ -2,3 +2,102 @@
     background: -webkit-linear-gradient(50deg, #45cafc, #303f9f);
     background: linear-gradient(40deg, #45cafc, #4285f4);
   }
+
+.tier2::before{
+    content: "★★";
+    color: #a3d6e4;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    font-size: 14px;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 3px 3px #000;
+    letter-spacing: -3px;
+    margin-left: -1px;
+}
+
+.champions{
+  position: relative;
+  width: auto;
+  padding: 0;
+}
+
+.tier3::before{
+    content: "★★★";
+    color: #e4c157;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    font-size: 14px;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 3px 3px #000;
+    letter-spacing: -3px;
+    margin-left: -1px;
+}
+.items{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    transition: all .3s;
+}
+
+img.item {
+    width: 1.1vw;
+}
+
+.matches .match {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: #102531;
+    margin: 20px 0;
+    padding: 10px 15px 10px 5px;
+    border: 1px solid #17313a;
+    border-left-width: 4px;
+}
+.match .p2{
+  border-left: 4px solid #7c8f92;
+}
+.match .p3{
+  border-left: 4px solid #a0715e;
+}
+.match .p1{
+  border-left: 4px solid #bd9a38;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  padding: 0 10px;
+  color: white;
+}
+.build {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: calc(100% - 250px);
+}
+.champions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.gold{
+  width: 0.8vw;
+}
+img.galaxie {
+  background: white;
+  border-radius: 10px;
+  width: 1.2vw;
+}
