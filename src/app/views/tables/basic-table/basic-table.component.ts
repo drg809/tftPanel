@@ -19,8 +19,8 @@ export class BasicTableComponent implements OnInit {
     console.log(this.user._id);
     this.summonerService.getMatchesHistoric(this.user._id).subscribe(data => {
       this.matchs = data;
+      this.matchs.sort((a, b) => b.data?.info.game_datetime  - a.data?.info.game_datetime);
       console.log(this.matchs);
     });
   }
-
 }

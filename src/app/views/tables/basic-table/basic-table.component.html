@@ -62,8 +62,8 @@
                       </div>
                       <div class="build">
                         <div class="champions">
-                          <a *ngFor="let unit of item.units" class="tier{{unit.tier}}">
-                            <img src="../../../../assets/img/champions/{{unit.character_id}}.png">
+                          <a *ngFor="let unit of item.units" class="tier{{unit.tier}} r{{unit.rarity}}">
+                            <img src="../../../../assets/img/champions/{{unit.character_id}}.png" class="champion">
                             <div class="items">
                               <img *ngIf="unit.items[0] && unit.items[0] != 999" class="item" alt="primer item" src="../../../../assets/img/items/set3/{{unit.items[0]}}.png">
                               <img *ngIf="unit.items[1] && unit.items[1] != 999" class="item" alt="segundo item" src="../../../../assets/img/items/set3/{{unit.items[1]}}.png">
