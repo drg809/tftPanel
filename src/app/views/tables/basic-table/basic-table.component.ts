@@ -9,7 +9,7 @@ import { User } from 'src/app/shared/models/user';
   styleUrls: ['./basic-table.component.scss']
 })
 export class BasicTableComponent implements OnInit {
-  match: SumMatch;
+  matchs: SumMatch[];
   user: User;
 
   constructor(private summonerService: SummonerService) { }
@@ -17,9 +17,9 @@ export class BasicTableComponent implements OnInit {
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('currentUser') || '{}');
     console.log(this.user._id);
-    this.summonerService.getMatchInfo(this.user._id).subscribe(data => {
-      this.match = data;
-      console.log(this.match);
+    this.summonerService.getMatchesHistoric(this.user._id).subscribe(data => {
+      this.matchs = data;
+      console.log(this.matchs);
     });
   }
 
