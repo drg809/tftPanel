@@ -1,116 +1,189 @@
-<div class="row mt-5">
-    <div class="col-md-12">
-        <!--Card-->
-        <mdb-card cascade="true" narrower="true" class="mt-5">
-            <!--Card image-->
-            <div class="view gradient-card-header blue darken-2">
-                <h4 class="h4-responsive text-white">Historico</h4>
-            </div>
-            <!--/Card image-->
-            <!--Card content-->
-            <mdb-card-body>
-                <!-- <h3 class="mt-5 text-left"><strong>Striped rows:</strong></h3> -->
-                <div *ngFor="let match of matchs">
-                  <div class="matches" *ngFor="let item of match.data.info.participants">
-                    <div  *ngIf="item.puuid == user.puuid" class="match p{{item.placement}}">
-                      <div class="info">
-                        <div>{{item.placement}}º Posicion</div>
-                        <div>
-                          Lvl.{{item.level}}
-                          <img class="gold" src="../../../../assets/icons/icon-gold.svg" alt="icono oro">
-                          {{item.gold_left}}
-                        </div>
-                        <div>
-                          <div [ngSwitch]="match.data.info.game_variation">
-                            <span *ngSwitchCase="'TFT3_GameVariation_Bonanza'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_Bonanza.png" alt="icono galaxia">
-                              Trade Sector
-                            </span>
-                            <span *ngSwitchCase="'TFT3_GameVariation_FreeNeekos'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_FreeNeekos.png" alt="icono galaxia">
-                              The Neekoverse
-                            </span>
-                            <span *ngSwitchCase="'TFT3_GameVariation_FreeRerolls'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_FreeRerolls.png" alt="icono galaxia">
-                              Trade Sector
-                            </span>
-                            <span *ngSwitchCase="'TFT3_GameVariation_MidGameFoN'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_MidGameFoN.png" alt="icono galaxia">
-                              Superdense Galaxy
-                            </span>
-                            <span *ngSwitchCase="'TFT3_GameVariation_StartingItems'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_StartingItems.png" alt="icono galaxia">
-                              Galactic Armory
-                            </span>
-                            <span *ngSwitchCase="'TFT3_GameVariation_TwoItemMax'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_TwoItemMax.png" alt="icono galaxia">
-                              Binary Star
-                            </span>
-                            <span *ngSwitchCase="'TFT3_GameVariation_TwoStarCarousels'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_TwoStarCarousels.png" alt="icono galaxia">
-                              Star Cluster
-                              <!-- <img class="info-icon" src="https://rerollcdn.com/ui/icon-info.svg" alt="info"> -->
-                            </span>
-                            <span *ngSwitchCase="'TFT3_GameVariation_SmallerBoards'">
-                              <img class="galaxie" src="../../../../assets/img/galaxies/TFT3_GameVariation_SmallerBoards.png" alt="icono galaxia">
-                              Dwarf Planet
-                            </span>
-                            <span *ngSwitchDefault>
-                              Normal Game
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="build">
-                        <div class="champions">
-                          <a *ngFor="let unit of item.units" class="tier{{unit.tier}} r{{unit.rarity}}">
-                            <img src="../../../../assets/img/champions/{{unit.character_id}}.png" class="champion">
-                            <div class="items">
-                              <img *ngIf="unit.items[0] && unit.items[0] != 999" class="item" alt="primer item" src="../../../../assets/img/items/set3/{{unit.items[0]}}.png">
-                              <img *ngIf="unit.items[1] && unit.items[1] != 999" class="item" alt="segundo item" src="../../../../assets/img/items/set3/{{unit.items[1]}}.png">
-                              <img *ngIf="unit.items[2] && unit.items[2] != 999" class="item" alt="tercer item" src="../../../../assets/img/items/set3/{{unit.items[2]}}.png">
-                            </div>
-                          </a>
-                        </div>
-                        <div class="traits">
-                          <div *ngFor="let trait of item.traits">
-                            <div *ngIf="trait.tier_current  > 0" class="builder-bonus-item active tier{{trait.style}}">
-                              <div class="builder-bonus-icon">
-                                <img src="../../../../assets/img/traits/{{trait.name | lowercase }}.png" alt="{{trait.name}}">
-                                <div class="builder-bonus-counter">
-                                  <span>{{trait.num_units}}</span>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </mdb-card-body>
-            <!--/.Card content-->
-        </mdb-card>
-        <!--/.Card-->
-    </div>
-</div>
+<div class="row">
+  <div class="col-md-3">
 
-<!-- name: "MechPilot"
-num_units: 3
-style: 3
-tier_current: 1
-tier_total: 1 -->
-<!-- <div style="position: absolute; top: 0px; left: 0px; width: 100%;">
-  <div>
-    <div class="rc-tooltip ui-tooltip rc-tooltip-placement-top  rc-tooltip-hidden" style="left: 646px; top: 1171px;">
-      <div class="rc-tooltip-content">
-        <div class="rc-tooltip-arrow">
 
-        </div>
-        <div class="rc-tooltip-inner" role="tooltip">
-          All Tier 1/2/3 champions on carousels have 2 stars.
-        </div>
-      </div>
-    </div>
+      <!--Card-->
+      <mdb-card cascade="true" narrower="true">
+
+          <!--Card image-->
+          <div class="view overlay hm-white-slight waves-light" mdbWavesEffect>
+              <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg"
+                   class="img-fluid">
+              <a>
+                  <div class="mask"></div>
+              </a>
+          </div>
+          <!--/Card image-->
+
+          <!--Card content-->
+          <mdb-card-body class="text-center">
+              <!--Title-->
+              <h4 class="card-title font-bold mb-2"><strong>Alice Mayer</strong></h4>
+              <h5 class="indigo-text"><strong>Photographer</strong></h5>
+
+              <h6 class='text-justify'><strong>About:</strong></h6>
+              <p class='text-justify'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ratione perferendis
+                  quod animi dignissimos consectetur
+                  quibusdam numquam laboriosam, minus, provident...</p>
+
+              <div class="text-right">
+                  <button type="button" mdbBtn outline="true" color="primary" rounded="true" size="sm" mdbWavesEffect>
+                      More...
+                  </button>
+              </div>
+
+          </mdb-card-body>
+          <!--/.Card content-->
+
+      </mdb-card>
+      <!--/.Card-->
+
   </div>
-</div> -->
+
+  <div class="col-md-9">
+
+      <!--Projects section v.2-->
+      <section class="section text-center pb-3">
+
+          <!--Section heading-->
+          <!-- <h2 class="section-heading h1 pt-4"><strong>Latest projects:</strong></h2> -->
+          <!--Section description-->
+
+          <!--Grid row-->
+          <div class="row d-flex justify-content-center">
+
+              <!--Grid column-->
+              <div class="col-lg-6 col-xl-5 mb-3">
+
+                  <!--Card-->
+                  <mdb-card cascade="true" narrower="true" class="d-flex mb-5">
+
+                      <!--Card image-->
+                      <div class="view overlay hm-white-slight">
+                          <img src="https://mdbootstrap.com/img/Mockups/Horizontal/6-col/pro-profile-page.jpg"
+                               class="img-fluid" alt="">
+                          <a href="#">
+                              <div class="mask"></div>
+                          </a>
+                      </div>
+
+                      <!--Card content-->
+                      <mdb-card-body>
+                          <!--Title-->
+                          <h4 class="card-title font-bold mb-3"><strong>Project name</strong></h4>
+                          <!--Text-->
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                              of the card's content.
+                          </p>
+                      </mdb-card-body>
+
+                      <!--Card footer-->
+                      <div class="card-footer links-light">
+                          <span class="right">
+                              <a href=""
+                                 class="waves-effect p-2">Live Preview
+                                  <mdb-icon fas icon="camera" class="ml-1"></mdb-icon></a>
+                          </span>
+                      </div>
+
+                  </mdb-card>
+                  <!--/.Card-->
+
+              </div>
+              <!--Grid column-->
+
+              <!--Grid column-->
+              <div class="col-lg-6 col-xl-5 mb-3">
+
+                  <!--Card-->
+                  <mdb-card cascade="true" narrower="true" class="d-flex mb-5">
+
+                      <!--Card image-->
+                      <div class="view overlay hm-white-slight">
+                          <img src="https://mdbootstrap.com/img/Mockups/Horizontal/6-col/pro-signup.jpg"
+                               class="img-fluid" alt="">
+                          <a href="#">
+                              <div class="mask"></div>
+                          </a>
+                      </div>
+
+                      <!--Card content-->
+                      <mdb-card-body>
+                          <!--Title-->
+                          <h4 class="card-title font-bold mb-3"><strong>Project name</strong></h4>
+                          <!--Text-->
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                              of the card's content.
+                          </p>
+                      </mdb-card-body>
+
+                      <!--Card footer-->
+                      <div class="card-footer links-light">
+                          <span class="right">
+                              <a href="" class="waves-effect p-2">Live Preview
+                                  <mdb-icon fas icon="camera" class="ml-1"></mdb-icon></a>
+                          </span>
+                      </div>
+
+                  </mdb-card>
+                  <!--/.Card-->
+
+              </div>
+              <!--Grid column-->
+
+          </div>
+          <!--Grid row-->
+
+          <!-- Grid row-->
+          <div class="row d-flex justify-content-center">
+              <!--Grid column-->
+              <div class="col-lg-12">
+                  <div class="text-center">
+
+                      <!--Pagination -->
+                      <nav class="my-4">
+                          <ul class="pagination pagination-circle pg-blue mb-0">
+
+                              <!--First-->
+                              <li class="page-item disabled"><a class="page-link" mdbWavesEffect>First</a></li>
+
+                              <!--Arrow left-->
+                              <li class="page-item disabled">
+                                  <a class="page-link" mdbWavesEffect aria-label="Previous">
+                                      <span aria-hidden="true">«</span>
+                                      <span class="sr-only">Previous</span>
+                                  </a>
+                              </li>
+
+                              <!--Numbers-->
+                              <li class="page-item active"><a class="page-link" mdbWavesEffect>1</a></li>
+                              <li class="page-item"><a class="page-link" mdbWavesEffect>2</a></li>
+                              <li class="page-item"><a class="page-link" mdbWavesEffect>3</a></li>
+                              <li class="page-item"><a class="page-link" mdbWavesEffect>4</a></li>
+                              <li class="page-item"><a class="page-link" mdbWavesEffect>5</a></li>
+
+                              <!--Arrow right-->
+                              <li class="page-item">
+                                  <a class="page-link" mdbWavesEffect aria-label="Next">
+                                      <span aria-hidden="true">»</span>
+                                      <span class="sr-only">Next</span>
+                                  </a>
+                              </li>
+
+                              <!--First-->
+                              <li class="page-item"><a class="page-link">Last</a></li>
+
+                          </ul>
+                      </nav>
+                      <!--/Pagination -->
+                  </div>
+              </div>
+          </div>
+          <!--Grid row -->
+
+      </section>
+      <!--/Projects section v.2-->
+  </div>
+
+
+</div>
