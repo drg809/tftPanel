@@ -1,0 +1,289 @@
+//Colors
+$platinum: #AD1457;
+$gold: #bd9a38;
+$silver: #7c8f92;
+$bronze: #A0715E;
+$fourth: #284454;
+
+.blue-gradient {
+    background: -webkit-linear-gradient(50deg, #45cafc, #303f9f);
+    background: linear-gradient(40deg, #45cafc, #4285f4);
+}
+
+
+
+.champions{
+  position: relative;
+  width: auto;
+  padding: 0;
+  .tier2::before{
+    content: "★★";
+    color: #a3d6e4;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    font-size: 14px;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 3px 3px #000;
+    letter-spacing: -3px;
+    margin-left: -1px;
+  }
+  .tier3::before{
+    content: "★★★";
+    color: #e4c157;
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    font-size: 14px;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: 100%;
+    text-align: center;
+    text-shadow: 0 3px 3px #000;
+    letter-spacing: -3px;
+    margin-left: -1px;
+  }
+}
+
+
+.items{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+    transition: all .3s;
+}
+
+img.item {
+    width: 1.1vw;
+}
+
+.matches .match {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    background: #102531;
+    margin: 20px 0;
+    padding: 10px 15px 10px 5px;
+    border: 1px solid #17313a;
+    border-left-width: 4px;
+}
+
+.match.p1{
+  border-left: 4px solid $gold !important;
+}
+.match.p2{
+  border-left: 4px solid $silver !important;
+}
+.match.p3{
+  border-left: 4px solid $bronze !important;
+}
+.match.p4{
+  border-left: 4px solid $fourth !important;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 200px;
+  padding: 0 10px;
+  color: white;
+}
+.build {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: calc(100% - 250px);
+}
+.champions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    flex-grow: 1;
+    a {
+      position: relative;
+      width: auto;
+      padding: 0;
+    }
+}
+.gold{
+  width: 0.8vw;
+}
+img.galaxie {
+  background: white;
+  border-radius: 10px;
+  width: 1.2vw;
+}
+.r0 {
+  img.champion {
+      border: 1px solid #213042;
+  }
+}
+.r1 {
+  img.champion {
+      border: 1px solid #156831;
+  }
+}
+.r2 {
+  img.champion {
+    border: 1px solid #12407c;
+  }
+}
+.r3 {
+  img.champion {
+      border: 1px solid #893088;
+  }
+}
+.r4 {
+  img.champion {
+      border: 1px solid $gold;
+  }
+}
+// .rc-tooltip.ui-tooltip .rc-tooltip-inner {
+//   padding: 5px 10px;
+//   font-size: 14px;
+//   border-radius: 3px;
+// }
+// .rc-tooltip .rc-tooltip-inner {
+//   padding: 10px 20px;
+//   color: hsla(0,0%,100%,.9);
+//   text-align: center;
+//   text-decoration: none;
+//   background-color: #123040;
+//   min-height: 35px;
+//   border: 1px solid #17313a;
+// }
+// .rc-tooltip-hidden {
+//   display: none;
+// }
+
+// .rc-tooltip {
+//   position: absolute;
+//   z-index: 1070;
+//   display: block;
+//   visibility: visible;
+// }
+.traits {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 5px;
+
+  .builder-bonus-item {
+      min-width: 36px;
+      width: 36px;
+      margin: 2.5px;
+
+      .builder-bonus-icon {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 2px;
+          width: 24px;
+          height: 12px;
+          margin: 6.93px 0;
+
+          &:before,
+          &:after {
+              content: "";
+              position: absolute;
+              width: 0;
+              border-left: 10px solid transparent;
+              border-right: 10px solid transparent;
+              border-left-width: 12px;
+              border-right-width: 12px;
+              z-index: 1;
+          }
+
+          &:before {
+              bottom: 100%;
+              border-bottom: 5.77px solid transparent;
+              border-bottom-width: 6.93px;
+              border-left-width: 12px;
+              border-right-width: 12px;
+          }
+
+          &:after {
+              top: 100%;
+              width: 0;
+              border-top: 5.77px solid transparent;
+              border-top-width: 6.93px;
+          }
+
+          img {
+              width: 18px;
+              z-index: 2;
+          }
+
+          .builder-bonus-counter {
+              position: absolute;
+              top: 50%;
+              left: calc(100% - 5px);
+              transform: translateY(-50%);
+              height: 15px;
+              width: 15px;
+              border: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 12px;
+              border-top-right-radius: 3px;
+              border-bottom-right-radius: 3px;
+
+              span {
+                  display: inline-block;
+                  line-height: 1em;
+                  margin-top: -3px;
+                  color: white;
+              }
+          }
+      }
+
+      .builder-bonus-count {
+          display: none;
+          height: 40px;
+      }
+  }
+}
+.traits .tier1 {
+  .builder-bonus-icon {
+      background: $bronze!important;
+      &:before, &:after {
+          border-bottom-color: $bronze!important;
+          border-top-color: $bronze!important;
+      }
+      .builder-bonus-counter {
+          background: $bronze!important;
+      }
+  }
+}
+.traits .tier2 {
+  .builder-bonus-icon {
+      background: $silver!important;
+      &:before, &:after {
+          border-bottom-color: $silver!important;
+          border-top-color: $silver!important;
+      }
+      .builder-bonus-counter {
+          background: $silver!important;
+      }
+  }
+}
+.traits .tier3 {
+  .builder-bonus-icon {
+      background: $gold!important;
+      &:before, &:after {
+          border-bottom-color: $gold!important;
+          border-top-color: $gold!important;
+      }
+      .builder-bonus-counter {
+          background: $gold!important;
+      }
+  }
+}
