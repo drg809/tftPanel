@@ -10,7 +10,6 @@ import { CalendarModule,  } from 'angular-calendar';
 import { SharedModule } from '../shared/shared.module';
 
 import { FooterComponent } from '../main-layout/footer/footer.component';
-import { BasicTableComponent } from './tables/basic-table/basic-table.component';
 import { ModalsComponent } from './modals/modals.component';
 import { Map1Component } from './maps/map1/map1.component';
 import { StatsCardComponent } from './dashboards/common/stats-card/stats-card.component';
@@ -18,6 +17,7 @@ import { StatsCard2Component } from './dashboards/common/stats-card2/stats-card2
 import { Dashboard1Component } from './dashboards/dashboard1/dashboard1.component';
 import { Profile1Component } from './profile/profile1/profile1.component';
 import { HelpComponent } from './help/help.component';
+import { HistoricalComponent } from './historical/historical.component';
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { HelpComponent } from './help/help.component';
   ],
   declarations: [
     FooterComponent,
-    BasicTableComponent,
+    HistoricalComponent,
     ModalsComponent,
     Map1Component,
     StatsCardComponent,
@@ -48,11 +48,11 @@ import { HelpComponent } from './help/help.component';
   ],
   exports: [
     FooterComponent,
-    BasicTableComponent,
+    HistoricalComponent,
     ModalsComponent,
     Map1Component,
     StatsCardComponent,
-    StatsCard2Component,    
+    StatsCard2Component,
     Dashboard1Component
   ],
   schemas: [NO_ERRORS_SCHEMA]
