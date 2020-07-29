@@ -1,7 +1,6 @@
 
 import { Map1Component } from './views/maps/map1/map1.component';
 import { ModalsComponent } from './views/modals/modals.component';
-import { BasicTableComponent } from './views/tables/basic-table/basic-table.component';
 import { Profile1Component } from './views/profile/profile1/profile1.component';
 import { RouterModule, Route } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
@@ -9,6 +8,7 @@ import { NotFoundComponent } from './views/errors/not-found/not-found.component'
 import { Dashboard1Component } from './views/dashboards/dashboard1/dashboard1.component';
 import { AuthGuard } from './shared/helpers/auth.guard';
 import { LoginComponent } from './main-layout/login/login.component';
+import { HistoricalComponent } from './views/historical/historical.component';
 
 
 const routes: Route[] = [
@@ -23,11 +23,7 @@ const routes: Route[] = [
       { path: 'profile1', component: Profile1Component, canActivate: [AuthGuard] },
     ]
   },
-  { path: 'tables', children:
-    [
-      { path: 'table1', component: BasicTableComponent, canActivate: [AuthGuard] },
-    ]
-  },
+  { path: 'historical', component: HistoricalComponent, canActivate: [AuthGuard] },
   { path: 'maps', children:
     [
       { path: 'map1', component: Map1Component, canActivate: [AuthGuard]},
