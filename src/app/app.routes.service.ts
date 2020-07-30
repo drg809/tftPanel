@@ -9,6 +9,7 @@ import { Dashboard1Component } from './views/dashboards/dashboard1/dashboard1.co
 import { AuthGuard } from './shared/helpers/auth.guard';
 import { LoginComponent } from './main-layout/login/login.component';
 import { HistoricalComponent } from './views/historical/historical.component';
+import { HistoricalMatchComponent } from './views/historical/match/historical-match.component';
 
 
 const routes: Route[] = [
@@ -24,6 +25,7 @@ const routes: Route[] = [
     ]
   },
   { path: 'historical', component: HistoricalComponent, canActivate: [AuthGuard] },
+  { path: 'historical/:id', component: HistoricalMatchComponent, canActivate: [AuthGuard] },
   { path: 'maps', children:
     [
       { path: 'map1', component: Map1Component, canActivate: [AuthGuard]},
