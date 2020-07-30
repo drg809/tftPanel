@@ -12,7 +12,7 @@
               <!-- <h3 class="mt-5 text-left"><strong>Striped rows:</strong></h3> -->
               <div *ngFor="let match of matchs">
                 <div class="matches" *ngFor="let item of match.data.info.participants">
-                  <div  *ngIf="item.puuid == user.puuid" class="match p{{item.placement}}">
+                  <div (click)="navigateToMatch(match.entrie)" *ngIf="item.puuid == user.puuid" class="match p{{item.placement}}">
                     <div class="info">
                       <div>{{item.placement}}º Posicion</div>
                       <div>
