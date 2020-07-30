@@ -18,6 +18,7 @@ import { Dashboard1Component } from './dashboards/dashboard1/dashboard1.componen
 import { Profile1Component } from './profile/profile1/profile1.component';
 import { HelpComponent } from './help/help.component';
 import { HistoricalComponent } from './historical/historical.component';
+import { HistoricalMatchComponent } from './historical/match/historical-match.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { HistoricalComponent } from './historical/historical.component';
   declarations: [
     FooterComponent,
     HistoricalComponent,
+    HistoricalMatchComponent,
     ModalsComponent,
     Map1Component,
     StatsCardComponent,
@@ -49,6 +51,7 @@ import { HistoricalComponent } from './historical/historical.component';
   exports: [
     FooterComponent,
     HistoricalComponent,
+    HistoricalMatchComponent,
     ModalsComponent,
     Map1Component,
     StatsCardComponent,
